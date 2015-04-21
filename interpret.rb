@@ -5,7 +5,8 @@ end
 def HIVE_interpret(cmd, isLocal)
   if cmd.start_with?("print")
     if isLocal
-      HIVE_print(cmd.slice! "print")
+      cmd.slice! "print"
+      HIVE_print(cmd)
     end
   else
     return "PARSEERROR"
