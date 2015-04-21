@@ -21,9 +21,9 @@ loop do
   command = gets.strip
   if command = "exit"
     exit
-  else if command = "run"
+  else if command == "run"
     #Run the specified file
-  else if command = "help"
+  else if command == "help"
     #Open help files
   else
     print HIVE_interpret(command, true)
@@ -53,7 +53,7 @@ def setup()
   puts "By using this program, you agree to the terms listed in LICENSE in the program directory. Since this is the free version, you also agree that this copy of the program MAY NOT be used for commercial or for-profit purposes."
   print "Accept terms? [y/n]: "
   license = gets.strip
-  if license != "y" or "Y"
+  if license != "y" and license != "Y"
     puts "Did not accept license, terminating program"
     exit
     #terminate program
