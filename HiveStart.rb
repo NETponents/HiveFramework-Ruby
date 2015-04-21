@@ -7,6 +7,7 @@ puts "Starting up..."
 if File.exist?('settings.txt') != true
   setup()
 end
+exit
 
 def setup()
   print "Enter a unique hostname for this node: "
@@ -18,6 +19,8 @@ def setup()
   license = gets.strip
   if license != "y" or "Y"
     puts "Did not accept license, terminating program"
+    exit
     #terminate program
   end
+  puts "Finished setup, restarting startup sequence..."
 end
