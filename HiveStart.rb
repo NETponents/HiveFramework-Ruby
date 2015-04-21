@@ -19,7 +19,7 @@ puts "Ready"
 loop do
   puts "int: "
   command = gets.strip
-  if command = "exit"
+  if command == "exit"
     exit
   else if command == "run"
     #Run the specified file
