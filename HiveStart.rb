@@ -5,7 +5,7 @@ puts "This program is distributed under the MIT license"
 puts "Commercial use with this copy of this program is prohibited"
 puts "Starting up..."
 if File.exist?('settings.txt') != true
-  setup
+  setup()
 end
 puts "Getting dependencies"
 require "interpret.rb"
