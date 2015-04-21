@@ -15,5 +15,5 @@ end
 
 def HIVE_print(line)
   a = line.strip
-  puts "[HIVEPARSE] " + a
+  puts "[HIVEPARSE]: " + a
 end
