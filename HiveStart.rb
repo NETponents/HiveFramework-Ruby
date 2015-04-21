@@ -7,6 +7,8 @@ puts "Starting up..."
 if File.exist?('settings.txt') != true
   setup()
 end
+puts "Getting dependencies"
+require "interpret.rb"
 puts "Creating varstore"
 #Create varstore
 puts "Starting portstore"
@@ -24,7 +26,7 @@ loop do
   else if command = "help"
     #Open help files
   else
-    #Run command with HIVE library
+    print HIVE_interpret(command)
   end
 end
 
