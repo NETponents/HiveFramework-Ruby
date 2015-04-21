@@ -1,21 +1,21 @@
 #!/usr/bin/ruby
 
-puts "HIVE Framework copyright 2015 Joshua Zenn"
-puts "This program is distributed under the MIT license"
-puts "Commercial use with this copy of this program is prohibited"
-puts "Starting up..."
-if File.exist?('settings.txt') != true
+#puts "HIVE Framework copyright 2015 Joshua Zenn"
+#puts "This program is distributed under the MIT license"
+#puts "Commercial use with this copy of this program is prohibited"
+#puts "Starting up..."
+#if File.exist?('settings.txt') != true
   #setup
-end
-puts "Getting dependencies"
-require "interpret.rb"
-puts "Creating varstore"
+#end
+#puts "Getting dependencies"
+#require "interpret.rb"
+#puts "Creating varstore"
 #Create varstore
-puts "Starting portstore"
+#puts "Starting portstore"
 #Create portstore
-puts "Starting networking"
+#puts "Starting networking"
 #Thread.start(directorNet(20000, 200001))
-puts "Ready"
+#puts "Ready"
 loop do
   puts "int: "
   command = gets.strip
