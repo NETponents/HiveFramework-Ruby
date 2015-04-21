@@ -43,7 +43,7 @@ puts "Starting networking"
 Thread.start{directorNet(20000, 200001)}
 puts "Ready"
 loop do
-  puts "int: "
+  print "[HIVE]: "
   command = gets.strip
   if command == "exit"
    exit
