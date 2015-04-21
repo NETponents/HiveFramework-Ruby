@@ -19,7 +19,7 @@ if File.exist?('settings.txt') != true
   puts "Finished setup, restarting startup sequence..."
 end
 puts "Getting dependencies"
-require "interpret.rb"
+require "./interpret.rb"
 puts "Creating varstore"
 #Create varstore
 puts "Starting portstore"
