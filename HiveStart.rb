@@ -7,7 +7,41 @@ puts "Starting up..."
 if File.exist?('settings.txt') != true
   setup()
 end
-exit
+puts "Creating varstore"
+#Create varstore
+puts "Starting portstore"
+#Create portstore
+puts "Starting networking"
+Thread.start(directorNet(20000, 200001))
+puts "Ready"
+loop do
+  puts "int: "
+  command = gets.strip
+  if command = "exit"
+    exit
+  else if command = "run"
+    #Run the specified file
+  else if command = "help"
+    #Open help files
+  else
+    #Run command with HIVE library
+  end
+end
+
+def directorNet(port, startPort)
+  require "socket"  
+  dts = TCPServer.new('localhost', port)
+  nextport = startPort;
+  loop do  
+    Thread.start(dts.accept) do |s|  
+      puts(s, " has connected")
+      s.write(nextport)
+      puts(s, " has been redirected to ", nextport)  
+      s.close
+      nextport = nextport + 1
+    end  
+  end  
+end
 
 def setup()
   print "Enter a unique hostname for this node: "
