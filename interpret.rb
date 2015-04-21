@@ -5,9 +5,14 @@ end
 def HIVE_interpret(cmd, isLocal)
   if cmd.start_with?("print")
     if isLocal
-      puts cmd.slice! "print"
+      HIVE_print(cmd.slice! "print")
     end
   else
     return "PARSEERROR"
   end
+end
+
+def HIVE_print(line)
+  a = line.strip
+  puts "[HIVEPARSE] " + a
 end
