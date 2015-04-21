@@ -1,0 +1,4 @@
+Want to know if your servers are HIVE-certified? Follow these instructions.
+1. Download HIVETEST.hive.
+2. Run the program on a node that is the ONLY node in the hive.
+3. After a few minutes, the program will return the results, along with if your node passed certification tests.
