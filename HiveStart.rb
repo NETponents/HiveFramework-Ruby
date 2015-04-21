@@ -14,7 +14,7 @@ puts "Creating varstore"
 puts "Starting portstore"
 #Create portstore
 puts "Starting networking"
-Thread.start(directorNet(20000, 200001))
+#Thread.start(directorNet(20000, 200001))
 puts "Ready"
 loop do
   puts "int: "
@@ -32,20 +32,20 @@ end
 
 exit
 
-def directorNet(port, startPort)
-  require "socket"  
-  dts = TCPServer.new('localhost', port)
-  nextport = startPort
-  loop do  
-    Thread.start(dts.accept) do |s|  
-      puts(s, " has connected")
-      s.write(nextport)
-      puts(s, " has been redirected to ", nextport)  
-      s.close
-      nextport = nextport + 1
-    end  
-  end  
-end
+#def directorNet(port, startPort)
+#  require "socket"  
+#  dts = TCPServer.new('localhost', port)
+#  nextport = startPort
+#  loop do  
+#    Thread.start(dts.accept) do |s|  
+#      puts(s, " has connected")
+#      s.write(nextport)
+#      puts(s, " has been redirected to ", nextport)  
+#      s.close
+#      nextport = nextport + 1
+#    end  
+#  end  
+#end
 
 def setup()
   print "Enter a unique hostname for this node: "
