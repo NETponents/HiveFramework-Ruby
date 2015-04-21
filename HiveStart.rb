@@ -33,7 +33,7 @@ end
 def directorNet(port, startPort)
   require "socket"  
   dts = TCPServer.new('localhost', port)
-  nextport = startPort;
+  nextport = startPort
   loop do  
     Thread.start(dts.accept) do |s|  
       puts(s, " has connected")
