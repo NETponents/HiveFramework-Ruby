@@ -1,2 +1,2 @@
 # HiveFramework
-Programming language aimed towards parallell computing
+Programming language aimed towards parallel computing
