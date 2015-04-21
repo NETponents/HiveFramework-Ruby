@@ -30,6 +30,8 @@ loop do
   end
 end
 
+exit
+
 def directorNet(port, startPort)
   require "socket"  
   dts = TCPServer.new('localhost', port)
