@@ -1,5 +1,20 @@
 #!/usr/bin/ruby
 
+def directorNet(port, startPort)
+  require "socket"  
+  dts = TCPServer.new('localhost', port)
+  nextport = startPort
+  loop do  
+    Thread.start(dts.accept) do |s|  
+      puts(s, " has connected")
+      s.write(nextport)
+      puts(s, " has been redirected to ", nextport)  
+      s.close
+      nextport = nextport + 1
+    end  
+  end  
+end
+
 puts "HIVE Framework copyright 2015 Joshua Zenn"
 puts "This program is distributed under the MIT license"
 puts "Commercial use with this copy of this program is prohibited"
@@ -42,18 +57,3 @@ loop do
 end
 
 exit
-
-def directorNet(port, startPort)
-  require "socket"  
-  dts = TCPServer.new('localhost', port)
-  nextport = startPort
-  loop do  
-    Thread.start(dts.accept) do |s|  
-      puts(s, " has connected")
-      s.write(nextport)
-      puts(s, " has been redirected to ", nextport)  
-      s.close
-      nextport = nextport + 1
-    end  
-  end  
-end
