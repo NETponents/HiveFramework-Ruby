@@ -26,7 +26,7 @@ loop do
   else if command = "help"
     #Open help files
   else
-    print HIVE_interpret(command)
+    print HIVE_interpret(command, true)
   end
 end
 
