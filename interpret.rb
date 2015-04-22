@@ -12,7 +12,6 @@ def HIVE_interpret(cmd, isLocal)
     require "./hivelib/math.rb"
     result = add(cmd.split(',')[1],cmd.split(',')[2])
     return result
-  end
   else
     return "PARSEERROR"
   end
