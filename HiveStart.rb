@@ -20,9 +20,12 @@ puts "This program is distributed under the MIT license"
 puts "Commercial use with this copy of this program is prohibited"
 puts "Parsing parameters"
 settings_silent = false
+settings_startscript = ""
 ARGV.each do|a|
   if a == "-silent" or a == "-s"
     settings_silent = true
+  elsif a.starts_with?("-script:")
+    settings_startscript = a
   end
 end
 puts "Starting up..."
