@@ -46,6 +46,6 @@ def HIVE_interpret(cmd, isLocal)
 end
 
 def HIVE_print(line)
-  a = line.strip
+  a = line.to_s.strip
   puts "[HIVEPARSE]: " + a
 end
