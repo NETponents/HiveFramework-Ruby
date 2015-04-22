@@ -41,6 +41,10 @@ def HIVE_interpret(cmd, isLocal)
     else
       return result
     end
+  elsif cmd.start_with?("pause")
+    HIVE_print("Press any key to continue...")
+    gets
+    return nil
   else
     return "PARSEERROR"
   end
