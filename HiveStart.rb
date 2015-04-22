@@ -25,7 +25,7 @@ ARGV.each do|a|
   if a == "-silent" or a == "-s"
     settings_silent = true
   elsif a.start_with?("-script:")
-    paramv = a
+    paramv = a.dup
     paramv.slice!("-script:")
     settings_startscript = paramv
   end
