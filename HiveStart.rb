@@ -65,7 +65,7 @@ if settings_silent
     puts "Script parameter is empty, exiting."
     exit
   else
-    File.open("my/file/path", "r") do |f|
+    File.open(settings_startscript, "r") do |f|
       f.each_line do |line|
         puts HIVE_interpret(command, true)
       end
