@@ -71,6 +71,7 @@ if settings_silent
       end
     end
   end
+  exit
 end
 loop do
   print "[HIVE]: "
