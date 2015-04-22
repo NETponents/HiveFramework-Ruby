@@ -10,19 +10,19 @@ def HIVE_interpret(cmd, isLocal)
     end
   elsif cmd.start_with?("add")
     require "./hivelib/math.rb"
-    result = add(cmd.split(',')[1], cmd.split(',')[2])
+    result = add(cmd.split(' ')[1], cmd.split(' ')[2])
     return result
   elsif cmd.start_with?("subtract")
     require "./hivelib/math.rb"
-    result = subtract(cmd.split(',')[1], cmd.split(',')[2])
+    result = subtract(cmd.split(' ')[1], cmd.split(' ')[2])
     return result
   elsif cmd.start_with?("multiply")
     require "./hivelib/math.rb"
-    result = multiply(cmd.split(',')[1], cmd.split(',')[2])
+    result = multiply(cmd.split(' ')[1], cmd.split(' ')[2])
     return result
   elsif cmd.start_with?("divide")
     require "./hivelib/math.rb"
-    result = divide(cmd.split(',')[1], cmd.split(',')[2])
+    result = divide(cmd.split(' ')[1], cmd.split(' ')[2])
     return result
   else
     return "PARSEERROR"
