@@ -56,6 +56,7 @@ Thread.start{directorNet(20000, 200001)}
 puts "Ready"
 if settings_silent
   puts "Silent mode is enabled, exiting..."
+  exit
 end
 loop do
   print "[HIVE]: "
