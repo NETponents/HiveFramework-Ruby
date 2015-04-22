@@ -1,5 +1,5 @@
 task :default => [:test]
 
 task :test do
-  ruby "HiveStart.rb" "-s"
+  ruby "./HiveStart.rb" "-s"
 end
