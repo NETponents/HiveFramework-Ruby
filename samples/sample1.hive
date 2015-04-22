@@ -1,4 +1,7 @@
+print Adding 1 + 2
 add 1 2
 print Hello World!
 print Dividing by zero, brace for impact
 divide 2 0
+pause
+print Ending HIVE program
