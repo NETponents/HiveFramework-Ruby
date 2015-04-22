@@ -25,8 +25,9 @@ ARGV.each do|a|
   if a == "-silent" or a == "-s"
     settings_silent = true
   elsif a.start_with?("-script:")
-    a.slice!("-script:")
-    settings_startscript = a
+    paramv = a
+    paramv.slice!("-script:")
+    settings_startscript = paramv
   end
 end
 puts "Starting up..."
