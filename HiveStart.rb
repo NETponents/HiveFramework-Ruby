@@ -54,6 +54,9 @@ puts "Starting portstore"
 puts "Starting networking"
 Thread.start{directorNet(20000, 200001)}
 puts "Ready"
+if settings_silent
+  puts "Silent mode is enabled, exiting..."
+end
 loop do
   print "[HIVE]: "
   command = gets.strip
