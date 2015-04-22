@@ -25,6 +25,7 @@ ARGV.each do|a|
   if a == "-silent" or a == "-s"
     settings_silent = true
   elsif a.starts_with?("-script:")
+    a.slice!("-script:")
     settings_startscript = a
   end
 end
@@ -58,8 +59,17 @@ puts "Starting networking"
 Thread.start{directorNet(20000, 200001)}
 puts "Ready"
 if settings_silent
-  puts "Silent mode is enabled, exiting..."
-  exit
+  puts "Silent mode is enabled, running specified script file."
+  if settings_startscript == ""
+    puts "Script parameter is empty, exiting."
+    exit
+  else
+    File.open("my/file/path", "r") do |f|
+      f.each_line do |line|
+        puts HIVE_interpret(command, true)
+      end
+    end
+  end
 end
 loop do
   print "[HIVE]: "
@@ -71,7 +81,7 @@ loop do
   elsif command == "help"
     #Open help files
   else
-    print HIVE_interpret(command, true)
+    puts HIVE_interpret(command, true)
   end
 end
 
