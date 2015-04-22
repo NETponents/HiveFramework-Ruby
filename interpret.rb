@@ -10,7 +10,7 @@ def HIVE_interpret(cmd, isLocal)
     end
   elsif cmd.start_with?("add")
     require "./hivelib/math.rb"
-    result = add(cmd.split(,)[1],cmd.split(,)[2])
+    result = add(cmd.split(',')[1],cmd.split(',')[2])
   end
   else
     return "PARSEERROR"
