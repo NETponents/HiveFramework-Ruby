@@ -67,7 +67,7 @@ if settings_silent
   else
     File.open(settings_startscript, "r") do |f|
       f.each_line do |line|
-        puts HIVE_interpret(line, true)
+        HIVE_interpret(line, true)
       end
     end
   end
@@ -83,7 +83,7 @@ loop do
   elsif command == "help"
     #Open help files
   else
-    puts HIVE_interpret(command, true)
+    HIVE_interpret(command, true)
   end
 end
 
