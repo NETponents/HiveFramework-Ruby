@@ -1,4 +1,5 @@
 if __FILE__ == $0
+  puts "Oops, did you mean to run HiveStart.rb instead?"
   exit
 end
 
