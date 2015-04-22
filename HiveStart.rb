@@ -67,7 +67,7 @@ if settings_silent
   else
     File.open(settings_startscript, "r") do |f|
       f.each_line do |line|
-        puts HIVE_interpret(command, true)
+        puts HIVE_interpret(line, true)
       end
     end
   end
