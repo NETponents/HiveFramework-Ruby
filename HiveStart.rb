@@ -21,6 +21,7 @@ puts "Commercial use with this copy of this program is prohibited"
 puts "Parsing parameters"
 settings_silent = false
 settings_startscript = ""
+setup_hostname = ""
 ARGV.each do|a|
   if a == "-silent" or a == "-s"
     settings_silent = true
@@ -54,6 +55,13 @@ puts "Getting dependencies"
 require "./interpret.rb"
 puts "Creating varstore"
 #Create varstore
+variableStore = Hash.new
+puts "Creating enviroment variables"
+varBlackList = Array.new
+variableStore["var_hiveenv_version"] = "0.0.0.83"
+varBlackList.Add "var_hiveenv_version"
+variableStore["var_hiveenv_hostname"] = setup_hostname
+varBlackList.Add "var_hiveenv_hostname"
 puts "Starting portstore"
 #Create portstore
 puts "Starting networking"
