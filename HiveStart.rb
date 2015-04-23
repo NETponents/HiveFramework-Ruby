@@ -87,7 +87,7 @@ loop do
   elsif command == "help"
     #Open help files
   else
-    HIVE_interpret(command, true)
+    HIVE_interpret(command, true, false)
   end
 end
 
