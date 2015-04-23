@@ -9,7 +9,7 @@ def HIVE_interpret(cmd, isLocal, interactive)
       cmd.slice! "print"
       HIVE_print(cmd)
     end
-  elsif cmd.start_with("#")
+  elsif cmd.start_with?("#")
     #This is a directive
     dcmd = cmd.split(' ')[0]
     dcmd.slice!("#")
