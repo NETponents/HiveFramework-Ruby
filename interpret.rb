@@ -3,7 +3,7 @@ if __FILE__ == $0
   exit
 end
 
-def HIVE_interpret(cmd, isLocal)
+def HIVE_interpret(cmd, isLocal, interactive)
   if cmd.start_with?("print")
     if isLocal
       cmd.slice! "print"
