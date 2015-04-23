@@ -86,6 +86,10 @@ loop do
     end
   elsif command == "help"
     #Open help files
+    puts "Help: Interactive mode"
+    puts "exit Exits HIVE"
+    puts "help Displays help"
+    puts "Any HIVE command is also supported in interactive mode except for job declarations"
   else
     HIVE_interpret(command, true, false)
   end
