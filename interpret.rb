@@ -15,7 +15,7 @@ def HIVE_interpret(cmd, isLocal, interactive)
     dcmd.slice!("#")
     if dcmd == "HIVE"
       #For now, just print version
-      HIVE_print("This program requires HIVE v" + cmd.split(' ')[0].to_s)
+      HIVE_print("This program requires HIVE v" + cmd.split(' ')[1].to_s)
     end
   elsif cmd.start_with?("add")
     require "./hivelib/math.rb"
