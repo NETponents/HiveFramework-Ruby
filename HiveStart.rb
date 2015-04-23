@@ -67,7 +67,7 @@ if settings_silent
   else
     File.open(settings_startscript, "r") do |f|
       f.each_line do |line|
-        HIVE_interpret(line, true)
+        HIVE_interpret(line, true, false)
       end
     end
   end
@@ -81,7 +81,7 @@ loop do
   elsif command == "run"
    File.open(command.split(' ')[1], "r") do |f|
       f.each_line do |line|
-        HIVE_interpret(line, true)
+        HIVE_interpret(line, true, false)
       end
     end
   elsif command == "help"
