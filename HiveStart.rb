@@ -79,7 +79,11 @@ loop do
   if command == "exit"
    exit
   elsif command == "run"
-   #Run the specified file
+   File.open(command.split(' ')[1], "r") do |f|
+      f.each_line do |line|
+        HIVE_interpret(line, true)
+      end
+    end
   elsif command == "help"
     #Open help files
   else
