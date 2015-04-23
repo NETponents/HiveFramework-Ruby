@@ -78,7 +78,7 @@ loop do
   command = gets.strip
   if command == "exit"
    exit
-  elsif command == "run"
+  elsif command.start_with?("run")
    File.open(command.split(' ')[1], "r") do |f|
       f.each_line do |line|
         HIVE_interpret(line, true, false)
