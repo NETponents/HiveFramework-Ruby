@@ -9,6 +9,14 @@ def HIVE_interpret(cmd, isLocal, interactive)
       cmd.slice! "print"
       HIVE_print(cmd)
     end
+  elsif cmd.start_with("#")
+    #This is a directive
+    dcmd = cmd.split(' ')[0]
+    dcmd.slice!("#")
+    if dcmd == "HIVE"
+      #For now, just print version
+      HIVE_print("This program requires HIVE v" + cmd.split(' ')[0].to_s)
+    end
   elsif cmd.start_with?("add")
     require "./hivelib/math.rb"
     result = add(cmd.split(' ')[1].to_i, cmd.split(' ')[2].to_i)
