@@ -12,8 +12,8 @@ def HIVE_interpret(cmd, isLocal, interactive, varStore)
       while indexi < cmd2.length
         if cmd2[indexi].start_with?("var_")
           cmd2[indexi] = varStore[cmd2[indexi]]
-          indexi = indexi + 1
         end
+        indexi = indexi + 1
       end
       cmd = ""
       indexi = 0
