@@ -3,7 +3,7 @@ if __FILE__ == $0
   exit
 end
 
-def HIVE_interpret(cmd, isLocal, interactive)
+def HIVE_interpret(cmd, isLocal, interactive, varStore)
   if cmd.start_with?("print")
     if isLocal
       cmd.slice! "print"
@@ -11,7 +11,7 @@ def HIVE_interpret(cmd, isLocal, interactive)
       indexi = 0
       while indexi < cmd2.length
         if cmd2[indexi].start_with?("var_")
-          cmd2[indexi] = "happy"
+          cmd2[indexi] = varStore[cmd2[indexi]]
           indexi = indexi + 1
         end
       end
