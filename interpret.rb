@@ -32,7 +32,7 @@ def HIVE_interpret(cmd, isLocal, interactive, varStore)
     if dcmd == "HIVE"
       #For now, just print version
       dcmd.slice!('HIVE:')
-      if dcmd.split('.')[3].to_i > varStore["var_hivenev_version"].split('.')[3].to_i
+      if dcmd.split('.')[3].to_i > varStore["var_hiveenv_version"].split('.')[3].to_i
         HIVE_print("Insufficient version. You have version #{ var_hiveenv_version }, this program requires #{ dcmd }")
         #terminate the program
       else
