@@ -12,12 +12,14 @@ def HIVE_interpret(cmd, isLocal, interactive)
       while indexi < cmd2.length
         if cmd2[indexi].start_with?("var_")
           cmd2[indexi] = "happy"
+          indexi = indexi + 1
         end
       end
       cmd = ""
       indexi = 0
       while indexi < cmd2.length
         cmd = cmd2[indexi] + " "
+        indexi = indexi + 1
       end
       HIVE_print(cmd)
     end
