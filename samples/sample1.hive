@@ -1,4 +1,4 @@
-#HIVE 0.0.0.90
+#HIVE 0.0.0.99
 print Adding 1 + 2
 add 1 2
 print Hello World!
