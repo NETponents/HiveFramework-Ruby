@@ -23,6 +23,8 @@ def HIVE_interpret(cmd, isLocal, interactive, varStore)
       end
       HIVE_print(cmd)
     end
+  elsif cmd.start_with?("var")
+    varStore[cmd.split(' ')[1]] = cmd.split(' ')[2]
   elsif cmd.start_with?("#")
     #This is a directive
     dcmd = cmd.split(' ')[0]
