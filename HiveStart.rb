@@ -57,11 +57,11 @@ puts "Creating varstore"
 #Create varstore
 variableStore = Hash.new
 puts "Creating enviroment variables"
-varBlackList = Array.new
+varBlackList = []
 variableStore["var_hiveenv_version"] = "0.0.0.83"
-varBlackList.Add "var_hiveenv_version"
+varBlackList << "var_hiveenv_version"
 variableStore["var_hiveenv_hostname"] = setup_hostname
-varBlackList.Add "var_hiveenv_hostname"
+varBlackList << "var_hiveenv_hostname"
 puts "Starting portstore"
 #Create portstore
 puts "Starting networking"
