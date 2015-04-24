@@ -31,7 +31,13 @@ def HIVE_interpret(cmd, isLocal, interactive, varStore)
     dcmd.slice!("#")
     if dcmd == "HIVE"
       #For now, just print version
-      HIVE_print("This program requires HIVE v" + cmd.split(' ')[1].to_s)
+      dcmd.slice!('HIVE:')
+      if dcmd.split('.')[3].to_i > varStore["var_hivenev_version"].split('.')[3].to_i
+        HIVE_print("Insufficient version. You have version #{ var_hiveenv_version }, this program requires #{ dcmd }")
+        #terminate the program
+      else
+        HIVE_print("This program requires HIVE v" + cmd.split(' ')[1].to_s)
+      end
     else
       HIVE_print("ERROR: bad directive")
     end
