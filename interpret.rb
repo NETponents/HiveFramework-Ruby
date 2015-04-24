@@ -7,6 +7,18 @@ def HIVE_interpret(cmd, isLocal, interactive)
   if cmd.start_with?("print")
     if isLocal
       cmd.slice! "print"
+      cmd2 = cmd.split(' ')
+      indexi = 0
+      while indexi < cmd2.length
+        if cmd2[indexi].start_with?("var_")
+          cmd2[indexi] = "happy"
+        end
+      end
+      cmd = ""
+      indexi = 0
+      while indexi < cmd2.length
+        cmd = cmd2[indexi] + " "
+      end
       HIVE_print(cmd)
     end
   elsif cmd.start_with?("#")
