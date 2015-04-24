@@ -75,7 +75,7 @@ if settings_silent
   else
     File.open(settings_startscript, "r") do |f|
       f.each_line do |line|
-        HIVE_interpret(line, true, false)
+        HIVE_interpret(line, true, false, variableStore)
       end
     end
   end
@@ -89,7 +89,7 @@ loop do
   elsif command.start_with?("run")
    File.open(command.split(' ')[1], "r") do |f|
       f.each_line do |line|
-        HIVE_interpret(line, true, false)
+        HIVE_interpret(line, true, false, variableStore)
       end
     end
   elsif command == "help"
@@ -99,7 +99,7 @@ loop do
     puts "help Displays help"
     puts "Any HIVE command is also supported in interactive mode except for job declarations"
   else
-    HIVE_interpret(command, true, false)
+    HIVE_interpret(command, true, false, variableStore)
   end
 end
 
