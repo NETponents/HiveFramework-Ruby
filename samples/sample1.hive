@@ -1,8 +1,10 @@
+print Checking version
 #HIVE 0.0.0.99
-print Adding 1 + 2
+print Adding 1 + 2 (99)
 add 1 2
-print Hello World!
-print Dividing by zero, brace for impact
+print Hello World! (99)
+print Dividing by zero, brace for impact (99)
 divide 2 0
+print Pausing for just a moment (99)
 pause
-print Ending HIVE program
+print Ending HIVE program (N/A)
