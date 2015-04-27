@@ -33,7 +33,7 @@ def HIVE_interpret(cmd, isLocal, interactive, varStore)
     else
       cmd['sys '] = ''
       require 'rbconfig'
-      include Config
+      include RbConfig
       case CONFIG['host_os']
         when /mswin|windows/i
           # Windows
