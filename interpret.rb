@@ -25,6 +25,29 @@ def HIVE_interpret(cmd, isLocal, interactive, varStore)
     end
   elsif cmd.start_with?("var")
     varStore[cmd.split(' ')[1]] = cmd.split(' ')[2]
+  elsif cmd.start_with?("sys")
+    cmd['sys '] = ''
+    require 'rbconfig'
+    include Config
+    case CONFIG['host_os']
+      when /mswin|windows/i
+        # Windows
+        HIVE_print("The SYS command is not yet supported on your platform.")
+      when /linux|arch/i
+        # Linux
+        HIVE_print(system(cmd))
+      when /sunos|solaris/i
+        # Solaris
+        HIVE_print("The SYS command is not yet supported on your platform.")
+      when /darwin/i
+        #MAC OS X
+        HIVE_print("The SYS command is not yet supported on your platform.")
+      else
+        # whatever
+        HIVE_print("The SYS command is not yet supported on your platform.")
+end
+
+
   elsif cmd.start_with?("#")
     #This is a directive
     dcmd = cmd.split(' ')[0]
