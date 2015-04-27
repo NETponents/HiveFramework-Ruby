@@ -1,5 +1,5 @@
 print Checking version
-#HIVE 0.0.0.104
+#HIVE 0.0.0.119
 print Adding 1 + 2 (99)
 add 1 2
 print Hello World! (99)
@@ -9,7 +9,7 @@ print Running a system command, Linux only at the moment (101)
 sys echo "Hello from the Linux terminal"
 print Attempting to run a command as sudo (104)
 sys sudo echo "Hi"
-print Now trying some stuff with vars (111)
+print Now trying some stuff with vars (118)
 var var_sample1_val 1
 var var_sample1_val2 4
 var var_sample1_val3 Hello
