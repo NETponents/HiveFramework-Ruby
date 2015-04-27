@@ -1,5 +1,5 @@
 #!/usr/bin/ruby
-
+temp_hive_vnum = "0.0.0.106"
 def directorNet(port, startPort)
   require "socket"  
   dts = TCPServer.new('localhost', port)
@@ -58,7 +58,7 @@ puts "Creating varstore"
 variableStore = Hash.new
 puts "Creating enviroment variables"
 varBlackList = []
-variableStore["var_hiveenv_version"] = "0.0.0.103"
+variableStore["var_hiveenv_version"] = temp_hive_vnum
 varBlackList << "var_hiveenv_version"
 variableStore["var_hiveenv_hostname"] = setup_hostname
 varBlackList << "var_hiveenv_hostname"
