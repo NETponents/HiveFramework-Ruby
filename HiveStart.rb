@@ -58,7 +58,7 @@ puts "Creating varstore"
 variableStore = Hash.new
 puts "Creating enviroment variables"
 varBlackList = []
-variableStore["var_hiveenv_version"] = "0.0.0.99"
+variableStore["var_hiveenv_version"] = "0.0.0.103"
 varBlackList << "var_hiveenv_version"
 variableStore["var_hiveenv_hostname"] = setup_hostname
 varBlackList << "var_hiveenv_hostname"
