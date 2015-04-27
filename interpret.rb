@@ -65,6 +65,7 @@ def HIVE_interpret(cmd, isLocal, interactive, varStore)
         #terminate the program
       else
         HIVE_print("This program requires HIVE v" + cmd.split(' ')[1].to_s)
+        HIVE_print("You have HIVE v" + varStore["var_hiveenv_version"].to_s)
       end
     else
       HIVE_print("ERROR: bad directive")
