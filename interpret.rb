@@ -26,9 +26,9 @@ def HIVE_interpret(cmd, isLocal, interactive, varStore)
   elsif cmd.start_with?("var")
     varStore[cmd.split(' ')[1]] = cmd.split(' ')[2]
   elsif cmd.start_with?("sys")
-    if cmd.split[' '][1] == "sudo"
+    if cmd.split(' ')[1] == "sudo"
       HIVE_print("Use of sudo is not allowed")
-    elsif cmd.split[' '][1] == "su"
+    elsif cmd.split(' ')[1] == "su"
       HIVE_print("Logging in as root is not allowed")
     else
       cmd['sys '] = ''
