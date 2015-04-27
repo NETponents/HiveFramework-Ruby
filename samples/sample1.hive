@@ -1,5 +1,5 @@
 print Checking version
-#HIVE 0.0.0.101
+#HIVE 0.0.0.104
 print Adding 1 + 2 (99)
 add 1 2
 print Hello World! (99)
@@ -7,6 +7,8 @@ print Dividing by zero, brace for impact (99)
 divide 2 0
 print Running a system command, Linux only at the moment (101)
 sys echo "Hello from the Linux terminal"
+print Attempting to run a command as sudo (104)
+sys sudo echo "Hi"
 print Pausing for just a moment (99)
 pause
 print Ending HIVE program (N/A)
