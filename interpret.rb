@@ -4,20 +4,24 @@ if __FILE__ == $0
 end
 
 def HIVE_interpret(cmd, isLocal, interactive, varStore)
-      cmd2 = cmd.split(' ')
-      indexi = 0
-      while indexi < cmd2.length
-        if cmd2[indexi].start_with?("var_")
-          cmd2[indexi] = varStore[cmd2[indexi]]
+      if cmd.start_with?("var")
+        # Do nothing
+      else
+        cmd2 = cmd.split(' ')
+        indexi = 0
+        while indexi < cmd2.length
+          if cmd2[indexi].start_with?("var_")
+            cmd2[indexi] = varStore[cmd2[indexi]]
+          end
+          indexi = indexi + 1
         end
-        indexi = indexi + 1
-      end
-      cmd = " "
-      indexi = 0
-      while indexi < cmd2.count
-        HIVE_print(indexi.to_s)
-        cmd = cmd + cmd2[indexi] + " "
-        indexi = indexi + 1
+        cmd = " "
+        indexi = 0
+        while indexi < cmd2.count
+          HIVE_print(indexi.to_s)
+          cmd = cmd + cmd2[indexi] + " "
+          indexi = indexi + 1
+        end
       end
       cmd = cmd.strip
   if cmd.start_with?("print")
