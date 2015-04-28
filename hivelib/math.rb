@@ -9,7 +9,7 @@ def multiply(one, two)
 end
 def divide(one, two)
   if two == 0
-    require './warning'
+    require './hivelib/warning'
     declare_warning("MATH:DIVIDE:DIVIDEBYZERO", false)
     return 0
   end
