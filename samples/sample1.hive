@@ -1,5 +1,7 @@
-print Checking version
+print Checking version (99)
 #HIVE 0.0.0.119
+print Checking new version (122)
+#HIVE 0.0.0.999
 print Adding 1 + 2 (99)
 add 1 2
 print Hello World! (99)
