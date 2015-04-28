@@ -1,5 +1,5 @@
 #!/usr/bin/ruby
-temp_hive_vnum = "0.0.0.120"
+temp_hive_vnum = "0.0.0.124"
 def directorNet(port, startPort)
   require "socket"  
   dts = TCPServer.new('localhost', port)
