@@ -1,11 +1,11 @@
 print Checking version (99)
-#HIVE 0.0.0.119
+#HIVE 0.0.0.126
 print Checking new version (122)
 #HIVE 0.0.0.999
 print Adding 1 + 2 (99)
 add 1 2
 print Hello World! (99)
-print Dividing by zero, brace for impact (99)
+print Dividing by zero, brace for impact (126)
 divide 2 0
 print Running a system command, Linux only at the moment (101)
 sys echo "Hello from the Linux terminal"
