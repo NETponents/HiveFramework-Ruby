@@ -68,7 +68,7 @@ def HIVE_interpret(cmd, isLocal, interactive, varStore)
       dcmd.slice!('HIVE:')
       if dcmd2.split('.')[3].to_i > varStore["var_hiveenv_version"].split('.')[3].to_i
         HIVE_print("Insufficient version. You have version #{ varStore["var_hiveenv_version"] }, this program requires #{ dcmd2 }")
-        require 'hivelib/warning.rb'
+        require './hivelib/warning'
         declare_warning("DIRECTIVE:VERSION:INSUFFICIENTVERSION", isLocal)
         #terminate the program
       else
