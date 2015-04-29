@@ -31,7 +31,7 @@ def HIVE_interpret(cmd, isLocal, interactive, varStore)
     end
   elsif cmd.start_with?("var")
     varStore[cmd.split(' ')[1]] = cmd.split(' ')[2]
-  elsif cmd.start_with?("sys")
+  elsif cmd.split(' ')[0] == "sys"
     if cmd.split(' ')[1] == "sudo"
       HIVE_print("Use of sudo is not allowed")
     elsif cmd.split(' ')[1] == "su"
@@ -56,6 +56,48 @@ def HIVE_interpret(cmd, isLocal, interactive, varStore)
         else
           # whatever
           HIVE_print("The SYS command is not yet supported on your platform.")
+      end
+    end
+  elseif cmd.split(' ')[0] == "sysc"
+    if cmd.split(' ')[1] == "shutdown"
+      require 'rbconfig'
+      include RbConfig
+      case CONFIG['host_os']
+        when /mswin|windows/i
+          # Windows
+          HIVE_print("The SYSc command is not yet supported on your platform.")
+        when /linux|arch/i
+          # Linux
+          HIVE_print(system("sudo halt"))
+        when /sunos|solaris/i
+          # Solaris
+          HIVE_print("The SYSc command is not yet supported on your platform.")
+        when /darwin/i
+          #MAC OS X
+          HIVE_print("The SYSc command is not yet supported on your platform.")
+        else
+          # whatever
+          HIVE_print("The SYSc command is not yet supported on your platform.")
+      end
+    elsif cmd.split(' ')[1] == "install"
+      require 'rbconfig'
+      include RbConfig
+      case CONFIG['host_os']
+        when /mswin|windows/i
+          # Windows
+          HIVE_print("The SYSc command is not yet supported on your platform.")
+        when /linux|arch/i
+          # Linux
+          HIVE_print(system("sudo apt-get install " + cmd.split(' ')[2]))
+        when /sunos|solaris/i
+          # Solaris
+          HIVE_print("The SYSc command is not yet supported on your platform.")
+        when /darwin/i
+          #MAC OS X
+          HIVE_print("The SYSc command is not yet supported on your platform.")
+        else
+          # whatever
+          HIVE_print("The SYSc command is not yet supported on your platform.")
       end
     end
   elsif cmd.start_with?("#")
