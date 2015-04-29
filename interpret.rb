@@ -58,7 +58,7 @@ def HIVE_interpret(cmd, isLocal, interactive, varStore)
           HIVE_print("The SYS command is not yet supported on your platform.")
       end
     end
-  elseif cmd.split(' ')[0] == "sysc"
+  elsif cmd.split(' ')[0] == "sysc"
     if cmd.split(' ')[1] == "shutdown"
       require 'rbconfig'
       include RbConfig
