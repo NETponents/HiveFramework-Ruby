@@ -23,7 +23,8 @@ def HIVE_interpret(cmd, isLocal, interactive, lVarStore, hVarStore)
         indexi = 0
         while indexi < cmd2.count
           #HIVE_print(indexi.to_s)
-          cmd = cmd + cmd2[indexi] + " "
+          #cmd = cmd + cmd2[indexi] + " "
+          cmd = "#{ cmd } #{ cmd2[indexi] }"
           indexi = indexi + 1
         end
       end
