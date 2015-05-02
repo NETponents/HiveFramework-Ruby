@@ -17,7 +17,7 @@ var var_sample1_val2 4
 var var_sample1_val3 Hello
 add var_sample1_val var_sample1_val2
 print var_sample1_val3
-print Now using hivevars (136)
+print Now using hivevars (142)
 hivevar hvar_sample1_test1 Part1
 hivevar hvar_sample1_test2 Part2
 print hvar_sample1_test1 hvar_sample1_test2
