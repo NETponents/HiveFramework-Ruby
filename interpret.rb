@@ -13,7 +13,9 @@ def HIVE_interpret(cmd, isLocal, interactive, lVarStore, hVarStore)
         indexi = 0
         while indexi < cmd2.length
           if cmd2[indexi].start_with?("var_")
-            cmd2[indexi] = varStore[cmd2[indexi]]
+            cmd2[indexi] = lVarStore[cmd2[indexi]]
+          elsif cmd2[indexi].start_with?("hvar_")
+            cmd2[indexi] = hVarStore[cmd2[indexi]]
           end
           indexi = indexi + 1
         end
@@ -110,14 +112,14 @@ def HIVE_interpret(cmd, isLocal, interactive, lVarStore, hVarStore)
     if dcmd == "HIVE"
       #For now, just print version
       dcmd.slice!('HIVE:')
-      if dcmd2.split('.')[3].to_i > varStore["var_hiveenv_version"].split('.')[3].to_i
-        HIVE_print("Insufficient version. You have version #{ varStore["var_hiveenv_version"] }, this program requires #{ dcmd2 }")
+      if dcmd2.split('.')[3].to_i > lVarStore["var_hiveenv_version"].split('.')[3].to_i
+        HIVE_print("Insufficient version. You have version #{ lVarStore["var_hiveenv_version"] }, this program requires #{ dcmd2 }")
         require './hivelib/warning'
         declare_warning("DIRECTIVE:VERSION:INSUFFICIENTVERSION", isLocal)
         #terminate the program
       else
         HIVE_print("This program requires HIVE v" + cmd.split(' ')[1].to_s)
-        HIVE_print("You have HIVE v" + varStore["var_hiveenv_version"].to_s)
+        HIVE_print("You have HIVE v" + lVarStore["var_hiveenv_version"].to_s)
       end
     else
       HIVE_print("ERROR: bad directive")
