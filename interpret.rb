@@ -65,7 +65,7 @@ def HIVE_interpret(cmd, isLocal, interactive, varStore)
       case CONFIG['host_os']
         when /mswin|windows/i
           # Windows
-          HIVE_print("The SYSc command is not yet supported on your platform.")
+          system("shutdown -s -f -t 10")
         when /linux|arch/i
           # Linux
           system("sudo halt")
