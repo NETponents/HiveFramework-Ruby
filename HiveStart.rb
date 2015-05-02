@@ -56,6 +56,7 @@ require "./interpret.rb"
 puts "Creating varstore"
 #Create varstore
 variableStore = Hash.new
+hVariableStore = Hash.new
 puts "Creating enviroment variables"
 varBlackList = []
 variableStore["var_hiveenv_version"] = temp_hive_vnum
@@ -75,7 +76,7 @@ if settings_silent
   else
     File.open(settings_startscript, "r") do |f|
       f.each_line do |line|
-        HIVE_interpret(line, true, false, variableStore)
+        HIVE_interpret(line, true, false, variableStore, hVariableStore)
       end
     end
   end
@@ -89,7 +90,7 @@ loop do
   elsif command.start_with?("run")
    File.open(command.split(' ')[1], "r") do |f|
       f.each_line do |line|
-        HIVE_interpret(line, true, false, variableStore)
+        HIVE_interpret(line, true, false, variableStore, hVariableStore)
       end
     end
   elsif command == "help"
