@@ -3,7 +3,7 @@ if __FILE__ == $0
   exit
 end
 
-def HIVE_interpret(cmd, isLocal, interactive, varStore)
+def HIVE_interpret(cmd, isLocal, interactive, lVarStore, hVarStore)
       if cmd.start_with?("var")
         lVarStore[cmd.split(' ')[1]] = cmd.split(' ')[2]
       elsif cmd.start_with?("hivevar")
