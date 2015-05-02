@@ -6,7 +6,7 @@ end
 def HIVE_interpret(cmd, isLocal, interactive, lVarStore, hVarStore)
       if cmd.start_with?("var")
         lVarStore[cmd.split(' ')[1]] = cmd.split(' ')[2]
-      elsif cmd.start_with?("hvar")
+      elsif cmd.start_with?("hivevar")
         hVarStore[cmd.split(' ')[1]] = cmd.split(' ')[2]
       else
         cmd2 = cmd.split(' ')
