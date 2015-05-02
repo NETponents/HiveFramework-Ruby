@@ -5,7 +5,9 @@ end
 
 def HIVE_interpret(cmd, isLocal, interactive, varStore)
       if cmd.start_with?("var")
-        # Do nothing
+        lVarStore[cmd.split(' ')[1]] = cmd.split(' ')[2]
+      elsif cmd.start_with?("hivevar")
+        hVarStore[cmd.split(' ')[1]] = cmd.split(' ')[2]
       else
         cmd2 = cmd.split(' ')
         indexi = 0
@@ -30,7 +32,7 @@ def HIVE_interpret(cmd, isLocal, interactive, varStore)
       HIVE_print(cmd)
     end
   elsif cmd.start_with?("var")
-    varStore[cmd.split(' ')[1]] = cmd.split(' ')[2]
+    #varStore[cmd.split(' ')[1]] = cmd.split(' ')[2]
   elsif cmd.split(' ')[0] == "sys"
     if cmd.split(' ')[1] == "sudo"
       HIVE_print("Use of sudo is not allowed")
