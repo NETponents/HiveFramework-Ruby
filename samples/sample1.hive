@@ -21,6 +21,8 @@ print Now using hivevars (142)
 hivevar hvar_sample1_test1 Part1
 hivevar hvar_sample1_test2 Part2
 print hvar_sample1_test1 hvar_sample1_test2
+print Testing comment-blocking (144)
+% This is a comment
 print Pausing for just a moment (99)
 pause
 print Ending HIVE program (N/A)
