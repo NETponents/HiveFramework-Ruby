@@ -17,6 +17,7 @@ var var_sample1_val2 4
 var var_sample1_val3 Hello
 add var_sample1_val var_sample1_val2
 print var_sample1_val3
+print Now using hivevars (---)
 print Pausing for just a moment (99)
 pause
 print Ending HIVE program (N/A)
