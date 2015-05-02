@@ -46,7 +46,7 @@ def HIVE_interpret(cmd, isLocal, interactive, varStore)
           HIVE_print("The SYS command is not yet supported on your platform.")
         when /linux|arch/i
           # Linux
-          HIVE_print(system(cmd))
+          system(cmd)
         when /sunos|solaris/i
           # Solaris
           HIVE_print("The SYS command is not yet supported on your platform.")
@@ -68,7 +68,7 @@ def HIVE_interpret(cmd, isLocal, interactive, varStore)
           HIVE_print("The SYSc command is not yet supported on your platform.")
         when /linux|arch/i
           # Linux
-          HIVE_print(system("sudo halt"))
+          system("sudo halt")
         when /sunos|solaris/i
           # Solaris
           HIVE_print("The SYSc command is not yet supported on your platform.")
