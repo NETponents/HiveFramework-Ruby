@@ -1,28 +1,37 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <title>Hive Framework by ARMmaster17</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  </head>
-  <body>
-    <section class="page-header">
-      <h1 class="project-name">Hive Framework</h1>
-      <h2 class="project-tagline">Programming language aimed towards parallel computing</h2>
-      <a href="https://github.com/ARMmaster17/HiveFramework" class="btn">View on GitHub</a>
-      <a href="https://github.com/ARMmaster17/HiveFramework/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/ARMmaster17/HiveFramework/tarball/master" class="btn">Download .tar.gz</a>
-    </section>
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
 
-    <section class="main-content">
-      <h1>
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Hive Framework by ARMmaster17</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Hive Framework</h1>
+        <h2>Programming language aimed towards parallel computing</h2>
+        <a href="https://github.com/ARMmaster17/HiveFramework" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
 <a id="what-is-hive-framework" class="anchor" href="#what-is-hive-framework" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is Hive Framework</h1>
 
-<p>The Hive Framework is a light-weight framework upon which you can build your own cluster computing program with no knowledge of how the Hive is set up or the underlying OS. All Hive apps are build in the Hivil language, which is kinda like BASIC (remember that?). The Hive Framework is also completely driven on auto-pilot. Just install it on a server, plug it into your network, and you're done! Hive takes care of connecting to other Hive nodes and syncing its status across the network.</p>
+<p>The Hive Framework is a light-weight framework upon which you can build your own cluster computing program with no knowledge of how the Hive is set up or the underlying OS. All Hive apps are build in the Hivil language, which is kinda like BASIC (remember that?). The Hive Framework is also completely driven on auto-pilot. Just install it on a server, plug it into your network, and you're done! Hive takes care of connecting to other Hive nodes and syncing its status across the network. It's also intelligent enough to balance the workload if the current node is faster (or slower) than the other nodes in the Hive.</p>
 
 <h1>
 <a id="how-do-i-get-it" class="anchor" href="#how-do-i-get-it" aria-hidden="true"><span class="octicon octicon-link"></span></a>How do I get it?</h1>
@@ -37,7 +46,7 @@
 <h2>
 <a id="minimum" class="anchor" href="#minimum" aria-hidden="true"><span class="octicon octicon-link"></span></a>Minimum</h2>
 
-<p>You probably could go lower, but here's what we tested Hive on while we developed it</p>
+<p>You probably could go lower, but here's what we tested Hive on while we developed it (operating at a reasonable speed)</p>
 
 <ul>
 <li>Intel Pentium III 800 MHz (1 Core)</li>
@@ -51,7 +60,22 @@
 <h2>
 <a id="recommended" class="anchor" href="#recommended" aria-hidden="true"><span class="octicon octicon-link"></span></a>Recommended</h2>
 
-<p>Here's what we recommend for more serious users</p>
+<p>This is what our build server consisted of. This would probably be the best option for most non-enterprise users.</p>
+
+<ul>
+<li>Intel Hex Core</li>
+<li>8 GB RAM</li>
+<li>SSH Access</li>
+<li>Docker</li>
+<li>Ubuntu 13.04 x86_64</li>
+<li>Latest version of Ruby</li>
+<li>Ethernet</li>
+</ul>
+
+<h2>
+<a id="optimum" class="anchor" href="#optimum" aria-hidden="true"><span class="octicon octicon-link"></span></a>Optimum</h2>
+
+<p>Here's what we recommend for more serious/enterprise users</p>
 
 <ul>
 <li>Intel Xeon (1 CPU, Quad or better)</li>
@@ -62,15 +86,26 @@
 <li>Dual Ethernet (Load distribution or fail-safe mode)</li>
 </ul>
 
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/ARMmaster17/HiveFramework">Hive Framework</a> is maintained by <a href="https://github.com/ARMmaster17">ARMmaster17</a>.</span>
+<p>*<em>HIVE Framework will also work on Windows and Mac OS X, but you may need to modify your scripts for full functionality.</em></p>
+        </section>
 
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-      </footer>
+        <aside id="sidebar">
+          <a href="https://github.com/ARMmaster17/HiveFramework/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/ARMmaster17/HiveFramework/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
 
-    </section>
+          <p class="repo-owner"><a href="https://github.com/ARMmaster17/HiveFramework"></a> is maintained by <a href="https://github.com/ARMmaster17">ARMmaster17</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
 
   
   </body>
 </html>
-
