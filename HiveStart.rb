@@ -1,5 +1,5 @@
 #!/usr/bin/ruby
-temp_hive_vnum = "0.0.0.128"
+temp_hive_vnum = "0.0.0.146"
 def directorNet(port, startPort)
   require "socket"  
   dts = TCPServer.new('localhost', port)
@@ -16,8 +16,11 @@ def directorNet(port, startPort)
 end
 
 puts "HIVE Framework copyright 2015 Joshua Zenn"
+puts "http://armmaster17.github.io/HiveFramework"
 puts "This program is distributed under the MIT license"
 puts "Commercial use with this copy of this program is prohibited"
+puts "Project page: https://github.com/ARMmaster17/HiveFramework"
+puts "When adding an issue, reference @ARMmaster17 (Joshua Zenn)"
 puts "Parsing parameters"
 settings_silent = false
 settings_startscript = ""
