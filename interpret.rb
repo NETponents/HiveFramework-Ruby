@@ -127,37 +127,39 @@ def HIVE_interpret(cmd, isLocal, interactive, lVarStore, hVarStore)
     else
       HIVE_print("ERROR: bad directive")
     end
-  elsif cmd.start_with?("add")
-    require "./hivelib/math.rb"
-    result = add(cmd.split(' ')[1].to_i, cmd.split(' ')[2].to_i)
-    if isLocal
-      HIVE_print(result)
-    else
-      return result
-    end
-  elsif cmd.start_with?("subtract")
-    require "./hivelib/math.rb"
-    result = subtract(cmd.split(' ')[1].to_i, cmd.split(' ')[2].to_i)
-    if isLocal
-      HIVE_print(result)
-    else
-      return result
-    end
-  elsif cmd.start_with?("multiply")
-    require "./hivelib/math.rb"
-    result = multiply(cmd.split(' ')[1].to_i, cmd.split(' ')[2].to_i)
-    if isLocal
-      HIVE_print(result)
-    else
-      return result
-    end
-  elsif cmd.start_with?("divide")
-    require "./hivelib/math.rb"
-    result = divide(cmd.split(' ')[1].to_i, cmd.split(' ')[2].to_i)
-    if isLocal
-      HIVE_print(result)
-    else
-      return result
+  elsif cmd.split(' ')[0].split('>')[0] == "math"
+    if cmd.split(' ')[0].split('>')[1] == "add"
+      require "./hivelib/math.rb"
+      result = add(cmd.split(' ')[1].to_i, cmd.split(' ')[2].to_i)
+      if isLocal
+        HIVE_print(result)
+      else
+        return result
+      end
+    elsif cmd.split(' ')[0].split('>')[1] == "sub"
+      require "./hivelib/math.rb"
+      result = subtract(cmd.split(' ')[1].to_i, cmd.split(' ')[2].to_i)
+      if isLocal
+        HIVE_print(result)
+      else
+        return result
+      end
+    elsif cmd.split(' ')[0].split('>')[1] == "mul"
+      require "./hivelib/math.rb"
+      result = multiply(cmd.split(' ')[1].to_i, cmd.split(' ')[2].to_i)
+      if isLocal
+        HIVE_print(result)
+      else
+        return result
+      end
+    elsif cmd.split(' ')[0].split('>')[1] == "div"
+      require "./hivelib/math.rb"
+      result = divide(cmd.split(' ')[1].to_i, cmd.split(' ')[2].to_i)
+      if isLocal
+        HIVE_print(result)
+      else
+        return result
+      end
     end
   elsif cmd.start_with?("pause")
     HIVE_print("Pausing")
