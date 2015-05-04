@@ -2,11 +2,11 @@ print Checking version (99)
 #HIVE 0.0.0.126
 print Checking new version (122)
 #HIVE 0.0.0.999
-print Adding 1 + 2 (99)
-add 1 2
+print Adding 1 + 2 (147)
+math>add 1 2
 print Hello World! (99)
 print Dividing by zero, brace for impact (126)
-divide 2 0
+math>div 2 0
 print Running a system command, Linux only at the moment (101)
 sys echo "Hello from the Linux terminal"
 print Attempting to run a command as sudo (104)
@@ -15,7 +15,7 @@ print Now trying some stuff with vars (118)
 var var_sample1_val 1
 var var_sample1_val2 4
 var var_sample1_val3 Hello
-add var_sample1_val var_sample1_val2
+math>add var_sample1_val var_sample1_val2
 print var_sample1_val3
 print Now using hivevars (142)
 hivevar hvar_sample1_test1 Part1
