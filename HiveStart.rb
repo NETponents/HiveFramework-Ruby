@@ -103,7 +103,7 @@ loop do
     puts "help Displays help"
     puts "Any HIVE command is also supported in interactive mode except for job declarations"
   else
-    HIVE_interpret(command, true, false, variableStore)
+    HIVE_interpret(command, true, false, variableStore, hVariableStore)
   end
 end
 
