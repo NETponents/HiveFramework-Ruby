@@ -8,6 +8,9 @@ def HIVE_interpret(cmd, isLocal, interactive, lVarStore, hVarStore)
         lVarStore[cmd.split(' ')[1]] = cmd.split(' ')[2]
       elsif cmd.start_with?("hivevar")
         hVarStore[cmd.split(' ')[1]] = cmd.split(' ')[2]
+      elsif cmd.start_with?("is")
+        # First, test each type of variable,
+        # Then set variables equal to each other
       elsif cmd.start_with?("%")
         #Do nothing, this is a comment
       else
