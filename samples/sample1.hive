@@ -1,5 +1,5 @@
 print Checking version (99)
-#HIVE 0.0.0.126
+#HIVE 0.0.0.151
 print Checking new version (122)
 #HIVE 0.0.0.999
 print Adding 1 + 2 (147)
@@ -21,6 +21,11 @@ print Now using hivevars (142)
 hivevar hvar_sample1_test1 Part1
 hivevar hvar_sample1_test2 Part2
 print hvar_sample1_test1 hvar_sample1_test2
+print is command (151)
+var var_sample1_val4 5
+var var_sample1_val5 9
+is var_sample1_val4 var_sample1_val5
+print var_sample1_val4 = var_sample1_val5
 print Testing comment-blocking (144)
 % This is a comment
 print Pausing for just a moment (99)
